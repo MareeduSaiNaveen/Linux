@@ -1,6 +1,0 @@
-Hello
-linux
-this
-file
-for
-lines
