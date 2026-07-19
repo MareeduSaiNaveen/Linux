@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<unistd.h> //fork()
+#include<sys/wait.h> //wait()
+#include<stdlib.h> //exit()
+void main(){
+    int stat;
+    pid_t pid;
+    pid = fork();
+    if(pid == 0){
+        printf("chalid\n");
+        exit(5);
+    }else{
+        printf("parent\n");
+        wait(&stat);
+        printf("Raw status = %d\n", stat);
+        printf("Exit Status = %d\n", WEXITSTATUS(stat));
+    }
